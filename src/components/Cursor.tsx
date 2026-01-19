@@ -2,7 +2,6 @@
 import React, { useEffect, useRef } from "react";
 
 export default function Cursor() {
-    const cursorRef = useRef<HTMLDivElement>(null);
     const trailsRef = useRef<(HTMLDivElement | null)[]>([]);
     const [isVisible, setIsVisible] = React.useState(false);
 
@@ -10,30 +9,18 @@ export default function Cursor() {
         // Hide default cursor
         document.body.style.cursor = "none";
 
-        // Add hover states for clickable elements
-        const clickables = document.querySelectorAll('a, button, input, textarea, [role="button"]');
-        clickables.forEach((el) => {
-            el.addEventListener('mouseenter', () => {
-                if (cursorRef.current) {
-                    cursorRef.current.classList.add('scale-[2.5]', 'opacity-50');
-                    cursorRef.current.classList.remove('bg-white');
-                    cursorRef.current.classList.add('bg-blue-400');
-                }
-            });
-            el.addEventListener('mouseleave', () => {
-                if (cursorRef.current) {
-                    cursorRef.current.classList.remove('scale-[2.5]', 'opacity-50');
-                    cursorRef.current.classList.remove('bg-blue-400');
-                    cursorRef.current.classList.add('bg-white');
-                }
-            });
-        });
+        // Default system cursor hiding for interactive elements
+        const style = document.createElement('style');
+        style.innerHTML = `
+      * { cursor: none !important; }
+    `;
+        document.head.appendChild(style);
 
         let mouseX = -100;
         let mouseY = -100;
 
         // Arrays to store position history for the snake effect
-        const trailLength = 20;
+        const trailLength = 40;
         const trailX: number[] = new Array(trailLength).fill(0);
         const trailY: number[] = new Array(trailLength).fill(0);
 
@@ -41,11 +28,6 @@ export default function Cursor() {
             if (!isVisible) setIsVisible(true);
             mouseX = e.clientX;
             mouseY = e.clientY;
-
-            // Immediate update for the main cursor
-            if (cursorRef.current) {
-                cursorRef.current.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
-            }
         };
 
         window.addEventListener("mousemove", onMouseMove);
@@ -63,11 +45,13 @@ export default function Cursor() {
                 const prevY = index === 0 ? mouseY : trailY[index - 1];
 
                 // Smooth follow logic (LERP)
-                trailX[index] += (prevX - trailX[index]) * 0.2;
-                trailY[index] += (prevY - trailY[index]) * 0.2;
+                // Using a slightly tighter factor for the head and looser for the tail could be good, 
+                // but a constant 0.25 provides that specific "snake" feel.
+                trailX[index] += (prevX - trailX[index]) * 0.25;
+                trailY[index] += (prevY - trailY[index]) * 0.25;
 
                 // Apply position
-                trail.style.transform = `translate(${trailX[index]}px, ${trailY[index]}px) translate(-50%, -50%)`;
+                trail.style.transform = `translate(${trailX[index]}px, ${trailY[index]}px) translate(-50%, -50%) scale(${1 - index / trailLength})`; // Tapering scale
             });
 
             requestAnimationFrame(animate);
@@ -77,26 +61,24 @@ export default function Cursor() {
 
         return () => {
             document.body.style.cursor = "auto";
+            document.head.removeChild(style);
             window.removeEventListener("mousemove", onMouseMove);
             cancelAnimationFrame(animId);
         };
-    }, [isVisible]);
+    }, []);
 
     return (
-        <div className={`pointer-events-none fixed inset-0 z-[9999] transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-            <div
-                ref={cursorRef}
-                className="fixed top-0 left-0 w-3 h-3 bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-transform duration-100"
-            />
-            {Array.from({ length: 20 }).map((_, i) => (
+        <div className={`pointer-events-none fixed inset-0 z-[99999999] transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+            {Array.from({ length: 40 }).map((_, i) => (
                 <div
                     key={i}
                     ref={(el) => { trailsRef.current[i] = el; }}
-                    className="fixed top-0 left-0 rounded-full bg-white/40"
+                    className="fixed top-0 left-0 bg-white rounded-full bg-blend-normal"
                     style={{
-                        width: `${8 - i * 0.3}px`,
-                        height: `${8 - i * 0.3}px`,
-                        transition: 'opacity 0.2s',
+                        width: '24px',
+                        height: '24px',
+                        pointerEvents: 'none',
+                        // We handle scale in the animation loop for performance
                     }}
                 />
             ))}

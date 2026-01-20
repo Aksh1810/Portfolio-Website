@@ -154,7 +154,36 @@ document.addEventListener('DOMContentLoaded', () => {
     animateParticles();
 
     // Scroll to section logic
-    document.querySelector('.explore-btn').addEventListener('click', () => {
-        document.getElementById('skills').scrollIntoView({ behavior: 'smooth' });
-    });
+    const exploreBtn = document.querySelector('.explore-btn');
+    if (exploreBtn) {
+        exploreBtn.addEventListener('click', () => {
+            document.getElementById('skills').scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+
+    // --- 3D Tilt Effect ---
+    const nameElement = document.querySelector(".name-outline");
+
+    if (nameElement) {
+        document.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e;
+            const { left, top, width, height } = nameElement.getBoundingClientRect();
+
+            // Calculate center of element
+            const centerX = left + width / 2;
+            const centerY = top + height / 2;
+
+            // Distance from center
+            const deltaX = clientX - centerX;
+            const deltaY = clientY - centerY;
+
+            // Calculate rotation (max 20 degrees)
+            // Rotate Y based on X distance (inverse)
+            // Rotate X based on Y distance
+            const rotateY = (deltaX / (window.innerWidth / 2)) * 20;
+            const rotateX = -(deltaY / (window.innerHeight / 2)) * 20;
+
+            nameElement.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+    }
 });

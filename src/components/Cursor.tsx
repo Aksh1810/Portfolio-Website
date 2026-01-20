@@ -20,7 +20,7 @@ export default function Cursor() {
         let mouseY = -100;
 
         // Arrays to store position history for the snake effect
-        const trailLength = 40;
+        const trailLength = 20;
         const trailX: number[] = new Array(trailLength).fill(0);
         const trailY: number[] = new Array(trailLength).fill(0);
 
@@ -69,7 +69,7 @@ export default function Cursor() {
 
     return (
         <div className={`pointer-events-none fixed inset-0 z-[99999999] transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-            {Array.from({ length: 40 }).map((_, i) => (
+            {Array.from({ length: 20 }).map((_, i) => (
                 <div
                     key={i}
                     ref={(el) => { trailsRef.current[i] = el; }}

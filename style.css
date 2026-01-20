@@ -300,6 +300,31 @@ h1 {
     transform: scale(1.1);
 }
 
+/* Custom TS Icon Styling */
+.icon-text {
+    width: 48px;
+    height: 48px;
+    background-color: #3178C6;
+    /* Official TS Blue */
+    color: white;
+    font-family: 'Inter', sans-serif;
+    /* Simulating the font */
+    font-weight: 700;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 4px 6px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 10px rgba(49, 120, 198, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover .icon-text {
+    transform: scale(1.1);
+}
+
 .skill-card span {
     color: #9ca3af;
     font-weight: 500;

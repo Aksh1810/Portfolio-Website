@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Custom Cursor Implementation ---
     const cursorContainer = document.getElementById('cursor-container');
-    const trailLength = 20;
+    const trailLength = 12;
     const trails = [];
 
     // Create trail elements

@@ -187,3 +187,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// --- Skills Tab Functionality ---
+document.addEventListener('DOMContentLoaded', () => {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.skills-tab-content');
+
+    if (tabBtns.length > 0) {
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // remove active class from all
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => {
+                    c.classList.remove('active');
+                    // Reset AOS animations if present inside tabs
+                    c.querySelectorAll('.skill-category').forEach(el => {
+                        el.classList.remove('aos-animate');
+                        setTimeout(() => el.classList.add('aos-animate'), 50);
+                    });
+                });
+
+                // add active class to clicked
+                btn.classList.add('active');
+                
+                // show target content
+                const targetId = btn.getAttribute('data-tab');
+                const targetContent = document.getElementById(targetId);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                }
+            });
+        });
+    }
+});

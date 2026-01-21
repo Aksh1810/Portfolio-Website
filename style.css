@@ -250,6 +250,8 @@ h1 {
     margin: 0 auto;
 }
 
+
+
 .skills-grid-wrapper {
     display: flex;
     flex-direction: column;
@@ -262,6 +264,19 @@ h1 {
     padding-left: 20px;
     border-left: 4px solid #3b82f6;
     color: #e5e7eb;
+}
+
+.skill-category h4 {
+    font-size: 1.2rem;
+    color: #9ca3af;
+    margin: 25px 0 15px 5px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+    width: 100%;
 }
 
 .skills-grid {
@@ -293,16 +308,14 @@ h1 {
 }
 
 .skill-card:hover {
-    transform: translateY(-5px);
     background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
+    border-color: rgba(129, 140, 248, 0.3);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
 }
 
 .skill-card i {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+    font-size: 2.5rem;
     transition: transform 0.3s ease;
 }
 
@@ -318,7 +331,6 @@ h1 {
     /* Official TS Blue */
     color: white;
     font-family: 'Inter', sans-serif;
-    /* Simulating the font */
     font-weight: 700;
     font-size: 1.2rem;
     display: flex;
@@ -338,10 +350,7 @@ h1 {
 .skill-card span {
     color: #9ca3af;
     font-weight: 500;
-}
-
-.skill-card:hover span {
-    color: #fff;
+    font-size: 0.9rem;
 }
 
 /* Footer */
@@ -353,4 +362,80 @@ footer {
     z-index: 10;
     position: relative;
     background: #000;
+}
+/* --- Tabbed Interface Styles --- */
+
+.skills-tabs-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.skills-tabs {
+    display: inline-flex;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 6px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    color: #9ca3af;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    cursor: pointer !important;
+    border-radius: 40px;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+.skills-tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.skills-tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsive Tabs */
+@media (max-width: 768px) {
+    .skills-tabs {
+        flex-wrap: wrap;
+        justify-content: center;
+        border-radius: 20px;
+    }
+    
+    .tab-btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+        flex: 1 1 auto;
+    }
 }

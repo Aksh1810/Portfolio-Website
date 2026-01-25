@@ -2,203 +2,334 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aksh Patel | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aksh Patel | Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+        <!-- Font Awesome for Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+        <!-- AOS Animation Library -->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- Custom Cursor Container -->
-    <div id="cursor-container"></div>
+        <!-- Custom Cursor Container -->
+        <div id="cursor-container"></div>
 
-    <!-- Background Particles -->
-    <canvas id="particles-canvas"></canvas>
+        <!-- Background Particles -->
+        <canvas id="particles-canvas"></canvas>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section id="hero">
-            <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
-                <h1>
-                    <span class="greeting">HI, I'M</span>
-                    <span class="name-outline" data-value="AKSH PATEL">AKSH PATEL</span>
-                </h1>
-            </div>
-
-            <div class="scroll-indicator">
-                <div class="mouse">
-                    <div class="wheel"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills">
-            <div class="container">
-                <div class="section-header" data-aos="fade-up">
-                    <h2>Technologies</h2>
-                    <p>I work with the most advanced tools to create reliable and scalable software.</p>
-                </div>
-
-                <!-- Tabs Navigation -->
-                <div class="skills-tabs-container" data-aos="fade-down">
-                    <div class="skills-tabs">
-                        <button class="tab-btn active" data-tab="tab-code">Programming</button>
-                        <button class="tab-btn" data-tab="tab-web">Full Stack</button>
-                        <button class="tab-btn" data-tab="tab-sys">DevOps</button>
-                    </div>
-                </div>
-
-                <!-- Tab Content Area -->
-                <div class="skills-content-wrapper">
-
-                    <!-- 1. Code Tab -->
-                    <div id="tab-code" class="skills-tab-content active">
-                        <div class="skill-category">
-                            <h4>Languages</h4>
-                            <div class="skills-grid">
-                                <div class="skill-card"><i class="fab fa-python"
-                                        style="color: #3776AB;"></i><span>Python</span></div>
-                                <div class="skill-card">
-                                    <div class="icon-text">TS</div><span>TypeScript</span>
-                                </div>
-                                <div class="skill-card"><i class="fab fa-java"
-                                        style="color: #007396;"></i><span>Java</span></div>
-                                <div class="skill-card"><span class="text-badge">C++</span><span>C++</span></div>
-                                <div class="skill-card"><span class="text-badge">C#</span><span>C#</span></div>
-                                <div class="skill-card"><span class="text-badge"
-                                        style="color:#0175C2;">Dt</span><span>Dart</span></div>
-                                <div class="skill-card"><span class="text-badge"
-                                        style="color:#00B4AB;">Kt</span><span>Kotlin</span></div>
-                                <div class="skill-card"><i class="fab fa-golang"
-                                        style="color: #00ADD8;"></i><span>Go</span></div>
-                                <div class="skill-card"><i class="fas fa-database"
-                                        style="color: #fff;"></i><span>SQL</span></div>
-                            </div>
-
-                            <h4>Libraries & Frameworks</h4>
-                            <div class="skills-grid">
-                                <div class="skill-card"><span class="text-badge"
-                                        style="color:#150458;">Pd</span><span>pandas</span></div>
-                                <div class="skill-card"><span class="text-badge"
-                                        style="color:#4DABCF;">Np</span><span>NumPy</span></div>
-                                <div class="skill-card"><i class="fas fa-fire"
-                                        style="color: #EE4C2C;"></i><span>PyTorch</span></div>
-                                <div class="skill-card"><span class="text-badge">Sc</span><span>Scikit-learn</span>
-                                </div>
-                                <div class="skill-card"><span class="text-badge"
-                                        style="color:#FF6F00;">TF</span><span>TensorFlow</span></div>
-                                <div class="skill-card"><i class="fas fa-chart-bar"
-                                        style="color: #F15A24;"></i><span>Matplotlib</span></div>
-                                <div class="skill-card"><span class="text-badge"
-                                        style="color: #512BD4;">.NET</span><span>.NET</span></div>
-                            </div>
+        <!-- Main Content -->
+        <main>
+                <!-- Hero Section -->
+                <section id="hero">
+                        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                                <h1>
+                                        <span class="greeting">HI, I'M</span>
+                                        <span class="name-outline" data-value="AKSH PATEL">AKSH PATEL</span>
+                                </h1>
                         </div>
-                    </div>
 
-                    <!-- 2. Web Tab -->
-                    <div id="tab-web" class="skills-tab-content">
-                        <div class="skill-category">
-
-                            <h4>Frontend</h4>
-                            <div class="skills-grid">
-                                <div class="skill-card"><i class="fab fa-html5"
-                                        style="color: #E34F26;"></i><span>HTML</span></div>
-                                <div class="skill-card"><i class="fab fa-css3-alt"
-                                        style="color: #1572B6;"></i><span>CSS</span></div>
-                                <div class="skill-card"><i class="fab fa-js"
-                                        style="color: #F7DF1E;"></i><span>JavaScript</span></div>
-                                <div class="skill-card"><i class="fab fa-react"
-                                        style="color: #61DAFB;"></i><span>React.js</span></div>
-                                <div class="skill-card"><i class="fab fa-angular"
-                                        style="color: #DD0031;"></i><span>Angular</span></div>
-                                <div class="skill-card"><span class="text-badge">AJ</span><span>Ajax</span></div>
-                                <div class="skill-card"><i class="fab fa-bootstrap"
-                                        style="color: #7952B3;"></i><span>Bootstrap</span></div>
-                                <div class="skill-card"><span class="text-badge"
-                                        style="color: #06B6D4;">TW</span><span>Tailwind</span></div>
-                            </div>
-
-                            <h4>Backend</h4>
-                            <div class="skills-grid">
-                                <div class="skill-card"><i class="fab fa-php"
-                                        style="color: #777BB4;"></i><span>PHP</span></div>
-                                <div class="skill-card"><i class="fab fa-node"
-                                        style="color: #339933;"></i><span>Node.js</span></div>
-                                <div class="skill-card"><i class="fas fa-network-wired"></i><span>REST API</span>
+                        <div class="scroll-indicator">
+                                <div class="mouse">
+                                        <div class="wheel"></div>
                                 </div>
-                            </div>
-
-                            <h4>Databases</h4>
-                            <div class="skills-grid">
-                                <div class="skill-card"><i class="fas fa-database"
-                                        style="color: #00758F;"></i><span>MySQL</span></div>
-                                <div class="skill-card"><i class="fas fa-database"
-                                        style="color: #336791;"></i><span>PostgreSQL</span></div>
-                                <div class="skill-card"><i class="fas fa-leaf"
-                                        style="color: #47A248;"></i><span>MongoDB</span></div>
-                            </div>
                         </div>
-                    </div>
+                </section>
 
-
-
-                    <!-- 4. Systems Tab (DevOps & Tools) -->
-                    <div id="tab-sys" class="skills-tab-content">
-                        <div class="skill-category">
-
-                            <h4>DevOps & Cloud</h4>
-                            <div class="skills-grid">
-                                <div class="skill-card"><i class="fab fa-git-alt"
-                                        style="color: #F05032;"></i><span>Git</span>
+                <!-- Skills Section -->
+                <section id="skills">
+                        <div class="container">
+                                <div class="section-header" data-aos="fade-up">
+                                        <h2>Technologies</h2>
+                                        <p>I work with the most advanced tools to create reliable and scalable software.
+                                        </p>
                                 </div>
-                                <div class="skill-card"><i class="fab fa-github"></i><span>GitHub</span></div>
-                                <div class="skill-card"><i class="fab fa-gitlab"
-                                        style="color: #FC6D26;"></i><span>GitLab</span></div>
-                                <div class="skill-card"><i class="fas fa-cubes"
-                                        style="color: #326CE5;"></i><span>Kubernetes</span></div>
-                                <div class="skill-card"><img
-                                        src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg"
-                                        style="width: 2rem; height: 2rem;" alt="TF"><span>Terraform</span></div>
-                                <div class="skill-card"><span class="text-badge"
-                                        style="color: #fff;">Nm</span><span>Nmap</span></div>
-                            </div>
 
-                            <h4>Operating Systems</h4>
-                            <div class="skills-grid">
-                                <div class="skill-card"><i class="fab fa-linux"
-                                        style="color: #FCC624;"></i><span>Linux</span>
+                                <!-- Tabs Navigation -->
+                                <div class="skills-tabs-container" data-aos="fade-down">
+                                        <div class="skills-tabs">
+                                                <button class="tab-btn active" data-tab="tab-code">Programming</button>
+                                                <button class="tab-btn" data-tab="tab-web">Full Stack</button>
+                                                <button class="tab-btn" data-tab="tab-sys">DevOps</button>
+                                        </div>
                                 </div>
-                                <div class="skill-card"><i class="fab fa-apple"
-                                        style="color: #fff;"></i><span>MacOS</span>
-                                </div>
-                                <div class="skill-card"><i class="fab fa-windows"
-                                        style="color: #0078D7;"></i><span>Windows</span></div>
-                            </div>
 
+                                <!-- Tab Content Area -->
+                                <div class="skills-content-wrapper">
+
+                                        <!-- 1. Code Tab -->
+                                        <div id="tab-code" class="skills-tab-content active">
+                                                <div class="skill-category">
+                                                        <h4>Languages</h4>
+                                                        <div class="skills-grid">
+                                                                <div class="skill-card"><i class="fab fa-python"
+                                                                                style="color: #3776AB;"></i><span>Python</span>
+                                                                </div>
+                                                                <div class="skill-card">
+                                                                        <div class="icon-text">TS</div>
+                                                                        <span>TypeScript</span>
+                                                                </div>
+                                                                <div class="skill-card"><i class="fab fa-java"
+                                                                                style="color: #007396;"></i><span>Java</span>
+                                                                </div>
+                                                                <div class="skill-card"><span
+                                                                                class="text-badge">C++</span><span>C++</span>
+                                                                </div>
+                                                                <div class="skill-card"><span
+                                                                                class="text-badge">C#</span><span>C#</span>
+                                                                </div>
+                                                                <div class="skill-card"><span class="text-badge"
+                                                                                style="color:#0175C2;">Dt</span><span>Dart</span>
+                                                                </div>
+                                                                <div class="skill-card"><span class="text-badge"
+                                                                                style="color:#00B4AB;">Kt</span><span>Kotlin</span>
+                                                                </div>
+                                                                <div class="skill-card"><i class="fab fa-golang"
+                                                                                style="color: #00ADD8;"></i><span>Go</span>
+                                                                </div>
+                                                                <div class="skill-card"><i class="fas fa-database"
+                                                                                style="color: #fff;"></i><span>SQL</span>
+                                                                </div>
+                                                        </div>
+
+                                                        <h4>Libraries & Frameworks</h4>
+                                                        <div class="skills-grid">
+                                                                <div class="skill-card"><span class="text-badge"
+                                                                                style="color:#150458;">Pd</span><span>pandas</span>
+                                                                </div>
+                                                                <div class="skill-card"><span class="text-badge"
+                                                                                style="color:#4DABCF;">Np</span><span>NumPy</span>
+                                                                </div>
+                                                                <div class="skill-card"><i class="fas fa-fire"
+                                                                                style="color: #EE4C2C;"></i><span>PyTorch</span>
+                                                                </div>
+                                                                <div class="skill-card"><span
+                                                                                class="text-badge">Sc</span><span>Scikit-learn</span>
+                                                                </div>
+                                                                <div class="skill-card"><span class="text-badge"
+                                                                                style="color:#FF6F00;">TF</span><span>TensorFlow</span>
+                                                                </div>
+                                                                <div class="skill-card"><i class="fas fa-chart-bar"
+                                                                                style="color: #F15A24;"></i><span>Matplotlib</span>
+                                                                </div>
+                                                                <div class="skill-card"><span class="text-badge"
+                                                                                style="color: #512BD4;">.NET</span><span>.NET</span>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+
+                                        <!-- 2. Web Tab -->
+                                        <div id="tab-web" class="skills-tab-content">
+                                                <div class="skill-category">
+
+                                                        <h4>Frontend</h4>
+                                                        <div class="skills-grid">
+                                                                <div class="skill-card"><i class="fab fa-html5"
+                                                                                style="color: #E34F26;"></i><span>HTML</span>
+                                                                </div>
+                                                                <div class="skill-card"><i class="fab fa-css3-alt"
+                                                                                style="color: #1572B6;"></i><span>CSS</span>
+                                                                </div>
+                                                                <div class="skill-card"><i class="fab fa-js"
+                                                                                style="color: #F7DF1E;"></i><span>JavaScript</span>
+                                                                </div>
+                                                                <div class="skill-card"><i class="fab fa-react"
+                                                                                style="color: #61DAFB;"></i><span>React.js</span>
+                                                                </div>
+                                                                <div class="skill-card"><i class="fab fa-angular"
+                                                                                style="color: #DD0031;"></i><span>Angular</span>
+                                                                </div>
+                                                                <div class="skill-card"><span
+                                                                                class="text-badge">AJ</span><span>Ajax</span>
+                                                                </div>
+                                                                <div class="skill-card"><i class="fab fa-bootstrap"
+                                                                                style="color: #7952B3;"></i><span>Bootstrap</span>
+                                                                </div>
+                                                                <div class="skill-card"><span class="text-badge"
+                                                                                style="color: #06B6D4;">TW</span><span>Tailwind</span>
+                                                                </div>
+                                                        </div>
+
+                                                        <h4>Backend</h4>
+                                                        <div class="skills-grid">
+                                                                <div class="skill-card"><i class="fab fa-php"
+                                                                                style="color: #777BB4;"></i><span>PHP</span>
+                                                                </div>
+                                                                <div class="skill-card"><i class="fab fa-node"
+                                                                                style="color: #339933;"></i><span>Node.js</span>
+                                                                </div>
+                                                                <div class="skill-card"><i
+                                                                                class="fas fa-network-wired"></i><span>REST
+                                                                                API</span>
+                                                                </div>
+                                                        </div>
+
+                                                        <h4>Databases</h4>
+                                                        <div class="skills-grid">
+                                                                <div class="skill-card"><i class="fas fa-database"
+                                                                                style="color: #00758F;"></i><span>MySQL</span>
+                                                                </div>
+                                                                <div class="skill-card"><i class="fas fa-database"
+                                                                                style="color: #336791;"></i><span>PostgreSQL</span>
+                                                                </div>
+                                                                <div class="skill-card"><i class="fas fa-leaf"
+                                                                                style="color: #47A248;"></i><span>MongoDB</span>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+
+
+
+                                        <!-- 4. Systems Tab (DevOps & Tools) -->
+                                        <div id="tab-sys" class="skills-tab-content">
+                                                <div class="skill-category">
+
+                                                        <h4>DevOps & Cloud</h4>
+                                                        <div class="skills-grid">
+                                                                <div class="skill-card"><i class="fab fa-git-alt"
+                                                                                style="color: #F05032;"></i><span>Git</span>
+                                                                </div>
+                                                                <div class="skill-card"><i
+                                                                                class="fab fa-github"></i><span>GitHub</span>
+                                                                </div>
+                                                                <div class="skill-card"><i class="fab fa-gitlab"
+                                                                                style="color: #FC6D26;"></i><span>GitLab</span>
+                                                                </div>
+                                                                <div class="skill-card"><i class="fas fa-cubes"
+                                                                                style="color: #326CE5;"></i><span>Kubernetes</span>
+                                                                </div>
+                                                                <div class="skill-card"><img
+                                                                                src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg"
+                                                                                style="width: 2rem; height: 2rem;"
+                                                                                alt="TF"><span>Terraform</span></div>
+                                                                <div class="skill-card"><span class="text-badge"
+                                                                                style="color: #fff;">Nm</span><span>Nmap</span>
+                                                                </div>
+                                                        </div>
+
+                                                        <h4>Operating Systems</h4>
+                                                        <div class="skills-grid">
+                                                                <div class="skill-card"><i class="fab fa-linux"
+                                                                                style="color: #FCC624;"></i><span>Linux</span>
+                                                                </div>
+                                                                <div class="skill-card"><i class="fab fa-apple"
+                                                                                style="color: #fff;"></i><span>MacOS</span>
+                                                                </div>
+                                                                <div class="skill-card"><i class="fab fa-windows"
+                                                                                style="color: #0078D7;"></i><span>Windows</span>
+                                                                </div>
+                                                        </div>
+
+                                                </div>
+                                        </div>
+                                </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                </section>
 
-        <footer>
-            <p>Designed & Built by Aksh Patel</p>
-            <p class="copyright">&copy; 2026 All rights reserved.</p>
-        </footer>
-    </main>
+                <!-- Projects Section -->
+                <section id="projects">
+                        <div class="container">
+                                <div class="section-header" data-aos="fade-up">
+                                        <h2>Projects</h2>
+                                        <p>A showcase of my recent work and personal projects.</p>
+                                </div>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
+                                <div class="projects-grid">
+
+                                        <!-- Project Card 1 -->
+                                        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                                                <div class="project-image">
+                                                        <div class="project-placeholder"><i class="fas fa-code"></i>
+                                                        </div>
+                                                </div>
+                                                <div class="project-content">
+                                                        <h3>Project Title 1</h3>
+                                                        <p>A brief description of this project explaining what it does
+                                                                and the problem it solves.</p>
+                                                        <div class="project-tags">
+                                                                <span>React</span>
+                                                                <span>Node.js</span>
+                                                                <span>MongoDB</span>
+                                                        </div>
+                                                        <div class="project-links">
+                                                                <a href="#" class="project-link"><i
+                                                                                class="fab fa-github"></i> Code</a>
+                                                                <a href="#" class="project-link"><i
+                                                                                class="fas fa-external-link-alt"></i>
+                                                                        Live</a>
+                                                        </div>
+                                                </div>
+                                        </div>
+
+                                        <!-- Project Card 2 -->
+                                        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                                                <div class="project-image">
+                                                        <div class="project-placeholder"><i class="fas fa-fire"></i>
+                                                        </div>
+                                                </div>
+                                                <div class="project-content">
+                                                        <h3>Project Title 2</h3>
+                                                        <p>A brief description of this project explaining what it does
+                                                                and the problem it solves.</p>
+                                                        <div class="project-tags">
+                                                                <span>Python</span>
+                                                                <span>TensorFlow</span>
+                                                                <span>YOLOv8</span>
+                                                        </div>
+                                                        <div class="project-links">
+                                                                <a href="#" class="project-link"><i
+                                                                                class="fab fa-github"></i> Code</a>
+                                                                <a href="#" class="project-link"><i
+                                                                                class="fas fa-external-link-alt"></i>
+                                                                        Live</a>
+                                                        </div>
+                                                </div>
+                                        </div>
+
+                                        <!-- Project Card 3 -->
+                                        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                                                <div class="project-image">
+                                                        <div class="project-placeholder"><i
+                                                                        class="fas fa-mobile-alt"></i></div>
+                                                </div>
+                                                <div class="project-content">
+                                                        <h3>Project Title 3</h3>
+                                                        <p>A brief description of this project explaining what it does
+                                                                and the problem it solves.</p>
+                                                        <div class="project-tags">
+                                                                <span>Flutter</span>
+                                                                <span>Dart</span>
+                                                                <span>Firebase</span>
+                                                        </div>
+                                                        <div class="project-links">
+                                                                <a href="#" class="project-link"><i
+                                                                                class="fab fa-github"></i> Code</a>
+                                                                <a href="#" class="project-link"><i
+                                                                                class="fas fa-external-link-alt"></i>
+                                                                        Live</a>
+                                                        </div>
+                                                </div>
+                                        </div>
+
+                                </div>
+                        </div>
+                </section>
+
+                <footer>
+                        <p>Designed & Built by Aksh Patel</p>
+                        <p class="copyright">&copy; 2026 All rights reserved.</p>
+                </footer>
+        </main>
+
+        <!-- Scripts -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>
